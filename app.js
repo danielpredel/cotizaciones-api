@@ -5,7 +5,7 @@ const cors = require("cors");
 const port = process.env.PORT || 3000;
 const db = require("./src/configs/db");
 
-// const usersRouter = require("./src/routes/user.routes");
+const clientesRouter = require("./src/routes/clientes");
 // const postRouter = require("./src/routes/post.routes");
 // const authRouter = require("./src/routes/auth.routes");
 
@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
-// app.use("/users", usersRouter);
+app.use("/clientes", clientesRouter);
 // app.use("/posts", postRouter);
 // app.use("/auth", authRouter);
 
