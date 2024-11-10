@@ -23,12 +23,12 @@ const comparePassword = (password, hash) => {
 };
 
 // Create Token
-const createToken = (id, verified) => {
+const createToken = (id, correo, rol) => {
   const options = {
     expiresIn: "4h",
   };
 
-  const token = jwt.sign({ id, verified }, process.env.SECRET_KEY, options); 
+  const token = jwt.sign({ id, correo, rol }, process.env.SECRET_KEY, options);
   return token;
 };
 

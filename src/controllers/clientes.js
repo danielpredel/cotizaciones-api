@@ -38,42 +38,6 @@ const crearCliente = (req, res) => {
     });
 };
 
-const checkEmail = (req, res) => {
-  const { email } = req.query;
-  clienteService
-    .checkEmail(email)
-    .then((found) => {
-      res.status(200).json({
-        success: true,
-        available: !found,
-      });
-    })
-    .catch((err) => {
-      res.status(500).json({
-        success: false,
-      });
-    });
-};
-
-const checkRFC = (req, res) => {
-  const { rfc } = req.query;
-  clienteService
-    .checkRFC(rfc)
-    .then((found) => {
-      res.status(200).json({
-        success: true,
-        available: !found,
-      });
-    })
-    .catch((err) => {
-      res.status(500).json({
-        success: false,
-      });
-    });
-};
-
 module.exports = {
   crearCliente,
-  checkEmail,
-  checkRFC,
 };

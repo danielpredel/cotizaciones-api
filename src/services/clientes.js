@@ -37,7 +37,7 @@ const crearCliente = (
       }
     })
     .then((cliente) => {
-      const token = createToken(cliente.id, cliente.correo);
+      const token = createToken(cliente.id, cliente.correo, 'CLIENTE');
       return {
         token,
       };
