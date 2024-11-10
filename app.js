@@ -3,8 +3,7 @@ const path = require("path");
 const logger = require("morgan");
 const cors = require("cors");
 const port = process.env.PORT || 3000;
-// const dbConnection = require("./src/configs/db");
-// dbConnection();
+const db = require("./src/configs/db");
 
 // const usersRouter = require("./src/routes/user.routes");
 // const postRouter = require("./src/routes/post.routes");
@@ -28,4 +27,3 @@ app.listen(port, () => {
     console.log(`http://localhost:${port}`);
   }
 });
- 
